@@ -1,0 +1,20 @@
+const pool = require("./db");
+
+const testConnection = async () => {
+    try {
+
+        const connection = await pool.getConnection();
+
+        console.log("Database Connected Successfully");
+
+        connection.release();
+
+    } catch (error) {
+
+       
+        console.error(error);
+
+    }
+};
+
+module.exports = testConnection;
